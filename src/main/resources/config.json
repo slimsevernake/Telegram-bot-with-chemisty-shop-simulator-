@@ -1,0 +1,18 @@
+{
+  "App": "Chemistry",
+  "properties": {
+    "processorThreads": 3,
+    "botName": "chemistry_bot",
+    "botToken": "",
+    "priceListsNum": 20,
+    "requiredSubstances": [1],
+    "qiwi": "+88005553535",
+    "card": "4800000000000000",
+    "bitcoin": "asdsadsadsadasdsadsada",
+    "logfile": "/bot/logs.txt",
+    "substancesFile": "/bot/substances.txt",
+    "mailTo": "some@gmail.com",
+    "mailUsername": "some@gmail.com",
+    "mailPassword": "pass"
+  }
+}

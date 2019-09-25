@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--MySQL using-->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+        <!--Connection-->
+        <property name="connection.url">jdbc:mysql://localhost:3306/telegramDB</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">228322</property>
+
+        <!--c3p0 pool-->
+        <property name="hibernate.c3p0.validate">true</property>
+        <property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
+        <property name="hibernate.c3p0.min_size">3</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+        <property name="hibernate.c3p0.max_statements">30</property>
+	    <property name="hibernate.c3p0.timeout">1800</property>
+        <property name="hibernate.c3p0.preferredTestQuery">SELECT 1;</property>
+        <property name="hibernate.c3p0.testConnectionOnCheckout">true</property>
+        <property name="hibernate.c3p0.idle_test_period">3000</property>
+
+        <!--Additional properties-->
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="hibernate.enhancer.enableLazyInitialization">true</property>
+        <property name="hibernate.jdbc.batch_size">5</property>
+        <property name="hibernate.order_updates">false</property>
+        <property name="connection.autocommit">true</property>
+        
+        <!--Autoreconnect-->
+        <property name="connection.autoReconnect">true</property>
+        <property name="connection.autoReconnectForPools">true</property>
+        <property name="connection.is-connection-validation-required">true</property>
+        <!--<property name="hibernate.transaction.auto_close_session">true</property>-->
+
+        <!-- DB schema will be updated if needed -->
+        <property name="hbm2ddl.auto">update</property>
+
+        <!--Debugging-->
+<!--        <property name="format_sql">true</property>-->
+<!--        <property name="show_sql">true</property>-->
+        
+        <!--Class mapping-->
+        <mapping class="ru.project.bots.model.entities.DialogsEntity"/>
+        <mapping class="ru.project.bots.model.entities.FormEntity"/>
+        <mapping class="ru.project.bots.model.entities.SubstanceEntity"/>
+        <mapping class="ru.project.bots.model.entities.CityEntity"/>
+    </session-factory>
+</hibernate-configuration>
